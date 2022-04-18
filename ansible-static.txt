@@ -1,0 +1,43 @@
+sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bk
+sudo vi /etc/ssh/sshd_config
+search filesystem
+:/PasswordAuthentication
+:/PermitRootLogin
+restart daemon      sudo systemctl restart sshd
+
+sudo cp /etc/sudoers /etc/sudoers.bk
+sudo vi /etc/sudoers
+:/NOPASSWD
+
+
+ssh ansible@public_ip
+ssh ansible@3.87.243.121
+
+sudo vi /etc/ansible/hosts
+[SERVERS]
+3.87.243.121
+18.233.96.61
+[SERVERS:VARS]
+ansible_user=ansible
+ansible_password=ansible
+
+sudo ssh-keygen -t rsa ( GENERATE UNDER THE ANSIBLE  _USER)
+
+sudo ssh-copy-id -i /root/.ssh/id_rsa.pub ansible@3.87.243.121
+udo ssh-copy-id -i /root/.ssh/id_rsa.pub ansible@18.223.96.61
+ sudo ssh-copy-id ansible@3.87.243.121
+ssh-copy-id ansible@18.233.96.61
+ansible -m ping webservers ( ping the clients)
+sudo ansible all -m ping 
+ansible webservers -b -m yum -a "name=ntp state=latest"
+ansible webservers -m yum -a "name=httpd state=latest
+ansible -i <group> -b -m user-a “name=user1 state=present”
+ansible -i webservers -b -m user-a “name=user1 state=present”
+
+
+
+
+
+
+
+
