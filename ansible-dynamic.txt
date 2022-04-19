@@ -16,10 +16,10 @@ aws configure
 set aws access key
 set aws secret access key
 
-export AWS_ACCESS_KEY_ID='AKIASBVEQC7LAI6X66OA'
+export AWS_ACCESS_KEY_ID='xxxxxxxxxxxxxxxxxxxxx'
 
 
-export AWS_SECRET_ACCESS_KEY='/vBcSza0XL9YK42/3R4N+r/VeshQv4eXJgWAwFSJ'
+export AWS_SECRET_ACCESS_KEY='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
 
 
 aws iam list-users
